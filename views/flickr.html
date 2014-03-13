@@ -1,0 +1,12 @@
+<div ng-controller="FlickrCtrl">
+	<div class="row" infinite-scroll='loadMore()' infinite-scroll-distance='1'>
+		<div class="col-sm-6 col-md-6" ng-repeat='p in pics'>
+		    <div ng-click="goToFlickr(p)" class="thumbnail">
+		    	<img ng-src='{{p.media.m}}'></img>
+		    </div>
+		</div>
+	</div>
+	<div id="loading" style="width:100%;z-index:-5000;" ng-show="flickrBusy">
+		<img ng-src='img/ajax-loader.gif' class="img-responsive" style="margin: 0 auto;" alt="loading">
+	</div>
+</div>
